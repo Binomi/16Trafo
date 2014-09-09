@@ -1,0 +1,25 @@
+reset
+set terminal epslatex color
+set output 'uebersetzung.tex'
+set xlabel 'Spannung $U_1$ [V]'
+set ylabel 'Spannung $U_2$ [V]'
+set key top left
+
+#set xrange[0:0.001]
+
+f(x)=a*x+b
+g(x)=c*x+d
+
+set fit logfile 'uebersetzung1.log'
+fit f(x) 'uebersetzung1.dat' u 1:2 via a,b
+set fit logfile 'uebersetzung2.log'
+fit g(x) 'uebersetzung2.dat' u 1:2 via c,d
+
+p 'uebersetzung1.dat' u 1:2 t'Messwerte' ,\
+f(x) lt -1 t'Regressionsgerade',\
+'uebersetzung2.dat' u 1:2 t'Messwerte' ,\
+g(x) lt 0 t'Regressionsgerade'
+
+set output
+!epstopdf uebersetzung.eps
+!rm uebersetzung.eps
