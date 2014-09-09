@@ -206,7 +206,12 @@ Aufgrund der Lenzschen Regel sind die Spannungen bzw. Ströme um $180^\circ$ pha
 
 \section{Durchführung}
 \label{sec:durchfuehrung}
-%Versuchsaufbau hier Bild einfügen
+\begin{figure}[!htb]
+	\centering	
+	\includegraphics[scale=1.0]{TrafoSchaltung.png}
+	\caption{Schaltplan des Versuchaufbaus}
+	\label{fig:Schaltung}
+\end{figure}
 Zuerst wird im \textbf{unbelasteten Fall} (Sekundärkreis nicht geschlossen) $U_1$ in Abhängigkeit von $I_1$.
 Da hier keine Widerstände in Betrieb sind, erfolgt die Regelung des Stroms über die Wechselspannungsquelle.
 Man nimmt mindestens 20 Werte auf, auch welche bei hohen Spannungen.
@@ -217,10 +222,17 @@ Nachdem die Anschlüsse wieder zurück getauscht wurden, wird nun der \textbf{be
 Dazu wird der Sekundärkreis geschlossen.
 Man achte darauf, dass die Spannung immer vor Öffnen und Schließen eines Schalters auf Null heruntergefahren wird, da sonst hohe Induktionsströme auftreten und diese die Sicherungen der Messgeräte zerstören.
 Noch ist $R_1$ nicht geschaltet und an Spule 1 liegt eine Spannung von 200 V an.
-Mit dem Schiebewiderstand $R_2$ wird der Sekundärstrom $I_2$ auf einen schönen Wert zwischen 0 A und 5 A geregelt und der zugehörige Primärstrom $I_1$ notiert.
-Nun wird der Widerstand $R_1$ anstelle des Transformator in den Primärkreis geschaltet und so verstellt, dass der nun fließende Strom $I_R$ gleich dem zuvor notierten Wert $I_1$ ist.\\
-%hier fehlt noch was
+Mit dem Schiebewiderstand $R_2$ wird der Sekundärstrom $I_2$ auf 1 A geregelt und der zugehörige Primärstrom $I_1$ notiert.
+Nun wird der Widerstand $R_1$ anstelle des Transformator in den Primärkreis geschaltet und so verstellt, dass der nun fließende Strom $I_R$ gleich dem zuvor notierten Wert $I_1$ ist.
+Danach wird die Primärspule parallel zum Schiebewiderstand geschaltet, und der Gesamtstrom $I_\text{ges}$ bei gleichem Sekundärstrom $I_2$ wie zuvor gemessen.
+Die ganze Messung wird für die Spulenströme 2, 3, 4, und 5 A durchgeführt sowie für 0 A.
+Bei letzterer Messung wird der Sekundärkreis geöffnet.\\
 Die Phasenverschiebung zwischen Primärspannung und -strom wird mit dem Oszilloskop beobachtet und mit dem zugehörigen Drucker zur weiteren Auswertung ausgedruckt.
+Dabei wird die Primärspannung über den Tastknopf (10x) an Channel 1 des Oszilloskops gelegt, während der Strom an Channel 2 anliegt.
+Dabei wird die \emph{Stromzange} verwendet.
+Außerdem ist $R_1$ nicht im Primärkreis geschaltet.\\
+Nun schaltet man das Oszilloskop in den \emph{x-y-Mode} und beobachtet die Änderungen der Kurve bei Veränderung der Last, also den gleichen Strömen $I_2$ wie zuvor.
+Die entsprechenden Ergebnisse werden wieder ausgedruckt.
 
 \section{Auswertung}
 \label{sec:auswertung}
