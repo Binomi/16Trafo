@@ -13,7 +13,7 @@ g(x)=c*x+d
 set fit logfile 'uebersetzung1.log'
 fit f(x) 'uebersetzung1.dat' u 1:2 via a,b
 set fit logfile 'uebersetzung2.log'
-fit g(x) 'uebersetzung2.dat' u 2:1 via c,d
+fit g(x) 'uebersetzung2.dat' u 1:2 via c,d
 
 p 'uebersetzung1.dat' u 1:2:(0.01) w e t'Messwerte' ,\
 f(x) lt -1 t'Regressionsgerade',\
