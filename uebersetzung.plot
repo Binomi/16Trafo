@@ -7,13 +7,13 @@ set key top left
 
 #set xrange[0:0.001]
 
-f(x)=a*x+b
-g(x)=c*x+d
+f(x)=a*x
+g(x)=c*x
 
 set fit logfile 'uebersetzung1.log'
-fit f(x) 'uebersetzung1.dat' u 1:2 via a,b
+fit f(x) 'uebersetzung1.dat' u 1:2 via a
 set fit logfile 'uebersetzung2.log'
-fit g(x) 'uebersetzung2.dat' u 2:1 via c,d
+fit g(x) 'uebersetzung2.dat' u 2:1 via c
 
 p 'uebersetzung1.dat' u 1:2:(0.01) w e t'Messwerte' ,\
 f(x) lt -1 t'Regressionsgerade',\
