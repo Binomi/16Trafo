@@ -199,7 +199,8 @@ Analog dazu ist auf der Ausgangsseite die \textit{Sekundärspule}.
 
 Bei einem \textit{idealen}, unbelasteten Transformator mit dem Übersetzungsverhältnis $u$ gilt folgendes:
 \begin{align}
-	u=\frac{N_1}{N_2}=\frac{U_1}{U_2}=\frac{I_2}{I_1}  
+	u=\frac{N_1}{N_2}=\frac{U_1}{U_2}=\frac{I_2}{I_1}
+	\label{eq:u}  
 \end{align}
 Aufgrund der Lenzschen Regel sind die Spannungen bzw. Ströme um $180^\circ$ phasenverschoben.
 %Herleitungen!!!!!!!!!!!!!!!!!!!!!!!!!
@@ -228,7 +229,7 @@ Danach wird die Primärspule parallel zum Schiebewiderstand geschaltet, und der 
 Die ganze Messung wird für die Spulenströme 2, 3, 4, und 5 A durchgeführt sowie für 0 A.
 Bei letzterer Messung wird der Sekundärkreis geöffnet.\\
 Die Phasenverschiebung zwischen Primärspannung und -strom wird mit dem Oszilloskop beobachtet und mit dem zugehörigen Drucker zur weiteren Auswertung ausgedruckt.
-Dabei wird die Primärspannung über den Tastknopf (10x) an Channel 1 des Oszilloskops gelegt, während der Strom an Channel 2 anliegt.
+Dabei wird die Primärspannung über den Tastkopf (10x) an Channel 1 des Oszilloskops gelegt, während der Strom an Channel 2 anliegt.
 Dabei wird die \emph{Stromzange} verwendet.
 Außerdem ist $R_1$ nicht im Primärkreis geschaltet.\\
 Nun schaltet man das Oszilloskop in den \emph{x-y-Mode} und beobachtet die Änderungen der Kurve bei Veränderung der Last, also den gleichen Strömen $I_2$ wie zuvor.
@@ -237,6 +238,12 @@ Die entsprechenden Ergebnisse werden wieder ausgedruckt.
 \section{Auswertung}
 \label{sec:auswertung}
 \subsection{Spannungsquelle}
+In Abbildung \ref{fig:UI} ist die Primärspannung gegen den Primärstrom beim unbelasteten Transformator aufgetragen.
+Bei einem idealen Transformator würde man eine Ursprungsgerade erwarten.
+Dies ist hier jedoch nur bis etwa 150 mA richtig.
+Danach steigt die Spannung langsam bis zu einer gewissen \textit{Sättigungsspannung}.
+Der Widerstand muss also immer größer werden.
+Dies lässt sich damit erklären, dass der Eisenkern gänzlich magnetisiert ist.
 \begin{figure}[!htb]
 	\centering
 	\input{UI.tex}
@@ -252,6 +259,16 @@ Die entsprechenden Ergebnisse werden wieder ausgedruckt.
 	\label{fig:uerbersetzung}
 \end{figure}
 
+Trägt man die Primärspannung gegen die Sekundärspannung auf (Abb.\ref{fig:uerbersetzung}), ist die sich ergebende Geradensteigung das Übersetzungsverhältnis $u$.
+Dies folgt aus \eqref{eq:u}.
+Da wir einmal $U_2$ in Abh. von $U_1$ gemessen haben und das andere Mal $U_1(U_2)$, ergeben sich auch zwei Geraden mit den Steigungen $u=10.663 \pm 0.025$ und $u=10.331 \pm 0.007$.
+Der gewichtete Mittelwert beträgt:
+\begin{empheq}[box=\shadowbox*]{align}
+	u=10.353 \pm 0.007
+	\label{res:u}
+\end{empheq}
+
+
 \subsection{Phasenverschiebung zwischen Spannung und Strom}
 \begin{figure}[!htb]
 	\centering
@@ -260,9 +277,23 @@ Die entsprechenden Ergebnisse werden wieder ausgedruckt.
 	\label{fig:Phase}
 \end{figure}
 
+\subsection{Leistung}
+
 \section{Diskussion}
 \label{sec:diskussion}
+Die Bestimmung der Phasenverschiebung mittels \textbf{Zeigerdiagramm} lieferte keine brauchbaren Ergebnisse.
+So sind zwar in Abb. \ref{fig:Phase} Werte für 1A - 5A zu sehen.
+Jedoch wurde hier der arccos aus einer Zahl größer 1 berechnet.
+Das Programm \textit{Gnuplot} setzt einen solchen Wert auf 0. 
+ fiel uns schon während des Versuches auf, da $I_\text{ges}$ in etwa doppelt so groß war wie $I_1$.
+Also wäre die Phasenverschiebung konstant bei 0.
+Uns ist jedoch immer noch schleierhaft, warum bei dieser Messung solche Werte gemessen wurden.
+Auch die anderen beiden Gruppen hatten das gleiche Phänomen.
+Für zukünftige Praktikanten sollte dies untersucht und evtl. behoben werden.
+Falls unser Aufbau fehlerhaft war, muss darauf in Zukunft in der Praktikumsanleitung hingewiesen werden.\\
 
-\section{Anhang}
+Da das \textbf{Übersetzungsverhältnis} meist ganzzahlig ist, gehen wir bei unserem Ergebnis \eqref{res:u} davon aus, dass das tatsächliche Verhältnis $u=10$ ist.
+Somit haben wir eine Abweichung von etwa $3.5\%$.
+
 
 \end{document}
