@@ -188,9 +188,8 @@ Dabei wird auch der \textit{belastete} Transformator untersucht.
 \section{Theorie}
 \label{sec:theorie}
 In der folgenden Abbildung \ref{fig:TrafoSchema} sind die grundlegenden Bestandteile eines Transformators zu sehen.
-Dabei ist $U_1$ die Spannung, $I_1$ die Stromstärke sowie die $N_1$ Windungszahl der \textit{Primärspule}.
+Dabei ist $U_1$ die Spannung, $I_1$ die Stromstärke sowie die $N_1$ Windungszahl der \textit{Primärspule}, die eine Induktivität $L_1$ besitzt.
 Analog dazu ist auf der Ausgangsseite die \textit{Sekundärspule}.
-
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.75]{TrafoSchema.png}
@@ -199,13 +198,18 @@ Analog dazu ist auf der Ausgangsseite die \textit{Sekundärspule}.
 \end{figure}
 \footnotetext{https://lp.uni-goettingen.de/get/text/4245, 01.09.2014}
 
-Bei einem \textit{idealen}, unbelasteten Transformator mit dem Übersetzungsverhältnis $u$ gilt folgendes:
+\subsection{Unbelasteter Transformator}
+Ist der Sekundärkreis nicht geschlossen, spricht man von einem unbelasteten Transformator.
+Durch die Primärspule wird ein Magnetfeld erzeugt.
+Da die
+
+Bei einem \textit{idealen}, unbelasteten Transformator mit dem Übersetzungsverhältnis $u$ gilt also folgendes:
 \begin{align}
-	u=\frac{N_1}{N_2}=\frac{U_1}{U_2}=\frac{I_2}{I_1}
+	u=\frac{N_1}{N_2}=\frac{U_1}{U_2}
 	\label{eq:u}  
 \end{align}
+Dies kann mit dem Induktionsgesetz hergeleitet werden
 Aufgrund der Lenzschen Regel sind die Spannungen bzw. Ströme um $180^\circ$ phasenverschoben.
-%Herleitungen!!!!!!!!!!!!!!!!!!!!!!!!!
 
 \subsection{Belasteter Transformator}
 Wirkleistung
@@ -221,19 +225,33 @@ Verlustleistung
 Phasenverschiebung
 \begin{align}
 	\tan\phi=\frac{I_0 \sin\phi_0}{I_1+I_0\cos\phi_0}
+	\label{eq:phase_theo}
 \end{align}
 mit $I_2=u\cdot I_1$
 
 \subsection{Methoden, um die Phasenverschiebung zu berechnen}
 \subsubsection{Lissajous-Figuren}
-
+Um die Phasenverschiebung $\varphi$ zwischen zwei Schwingungen gleicher Frequenz $\omega$ zu bestimmen, trägt man die sich so ergebende Kurve auf:
+\begin{align*}
+	x(t)&=a\sin(\omega t)\\
+	y(t)&=b\sin(\omega t + \varphi)
+\end{align*}
+Der Schnittpunkt mit der x-Achse bezeichnen wir mit $x_0$, den mit der y-Achse mit $y_0$.
+Betrachtet man nun $x=0$, so folgt $\omega t=0$ oder $\omega t=\pi$, also $y_0=b \sin(\varphi)$.
+Analog gilt für $y=0:\;x_0=a\sin(\varphi)$.
+Also kann so $\varphi$ berechnet werden:
+\begin{align}
+	\varphi=\arcsin\frac{x_0}{a}=\arcsin\frac{y_0}{b}
+	\label{eq:lissajous}
+\end{align}
 \subsubsection{Zeigerdiagramm}
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[scale=1.0]{Zeigerdiagramm.png}
+	\includegraphics[scale=0.8]{Zeigerdiagramm.png}
 \end{figure}
 \begin{align}
 	\cos(\phi/2)=\frac{I_\text{ges}}{2I_1}
+	\label{eq:zeigerdiagramm}
 \end{align}
 
 \section{Durchführung}
@@ -301,6 +319,13 @@ Der gewichtete Mittelwert beträgt:
 
 
 \subsection{Phasenverschiebung zwischen Spannung und Strom}
+Um die Phasenverschiebung zu bestimmen, wurden 3 Methoden verwendet:
+Zum einen hat das Oszilloskop die Verschiebung im y-t-Mode angezeigt, zum anderen haben wir aus den Ausdrucken der Lissajous-Figuren mithilfe \eqref{eq:lissajous} $\varphi$ bestimmt.
+Außerdem haben wir die wichtigen Werte für die Zeigerdiagramm-Methode gemessen.
+Mit \eqref{eq:zeigerdiagramm} wurde daraus die Phasenverschiebung berechnet.
+All dies ist in der Abbildung \ref{fig:Phase} zu sehen.
+Darin wurde auch die Theoriekurve aus \eqref{eq:phase_theo} eingezeichnet.
+Hierbei verwenden wir $I_0=0.15\,$A und $\varphi_0=\pi/2$ sowie die zuvor berechnete Übersetzung \eqref{res:u}.
 \begin{figure}[!htb]
 	\centering
 	\input{Phase.tex}
