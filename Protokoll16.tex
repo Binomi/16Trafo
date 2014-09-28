@@ -188,7 +188,7 @@ Dabei wird auch der \textit{belastete} Transformator untersucht.
 \section{Theorie}
 \label{sec:theorie}
 In der folgenden Abbildung \ref{fig:TrafoSchema} sind die grundlegenden Bestandteile eines Transformators zu sehen.
-Dabei ist $U_1$ die Spannung, $I_1$ die Stromstärke sowie die $N_1$ Windungszahl der \textit{Primärspule}, die eine Induktivität $L_1$ besitzt.
+Dabei ist $U_1$ die Spannung, $I_1$ die Stromstärke sowie die $N_1$ Windungszahl der \textit{Primärspule}.
 Analog dazu ist auf der Ausgangsseite die \textit{Sekundärspule}.
 \begin{figure}[!htb]
 	\centering
@@ -200,16 +200,16 @@ Analog dazu ist auf der Ausgangsseite die \textit{Sekundärspule}.
 
 \subsection{Unbelasteter Transformator}
 Ist der Sekundärkreis nicht geschlossen, spricht man von einem unbelasteten Transformator.
-Durch die Primärspule wird ein Magnetfeld erzeugt.
-Da die
+Außerdem liege an der Primärspule eine Wechselspannung $U_1$ an.
+Durch den Eisenkern ist der von der Primärspule erzeugte magnetische Fluss durch diese genauso groß wie durch die Sekundärspule.
+Mit dem Induktionsgesetz folgt:
+\begin{align*}
+	U_1&=N_1 \dot{\Phi} \\
+	U_2&=-N_2\dot{\Phi}=-\frac{N_2}{N_1}U_1
+\end{align*}
 
-Bei einem \textit{idealen}, unbelasteten Transformator mit dem Übersetzungsverhältnis $u$ gilt also folgendes:
-\begin{align}
-	u=\frac{N_1}{N_2}=\frac{U_1}{U_2}
-	\label{eq:u}  
-\end{align}
-Dies kann mit dem Induktionsgesetz hergeleitet werden
-Aufgrund der Lenzschen Regel sind die Spannungen bzw. Ströme um $180^\circ$ phasenverschoben.
+Man erkennt, dass aufgrund der Lenzschen Regel die Spannungen um $180^\circ$ phasenverschoben sind.
+Da Primärstrom und -spannung $90^\circ$ phasenverschoben sind, wird in diesem Fall auch keine Energie umgesetzt.
 
 \subsection{Belasteter Transformator}
 Wirkleistung
@@ -228,6 +228,12 @@ Phasenverschiebung
 	\label{eq:phase_theo}
 \end{align}
 mit $I_2=u\cdot I_1$
+
+Bei einem \textit{idealen} Transformator mit dem Übersetzungsverhältnis $u$ gilt also folgendes:
+\begin{align}
+	u=\frac{N_1}{N_2}=\frac{U_1}{U_2}=\frac{I_2}{I_1}
+	\label{eq:u}  
+\end{align}
 
 \subsection{Methoden, um die Phasenverschiebung zu berechnen}
 \subsubsection{Lissajous-Figuren}

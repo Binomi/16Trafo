@@ -41,3 +41,45 @@ correlation matrix of the fit parameters:
 
                c      
 c               1.000 
+
+
+*******************************************************************************
+Sun Sep 28 23:12:44 2014
+
+
+FIT:    data read from 'uebersetzung2.dat' u 1:2
+        #datapoints = 9
+        residuals are weighted equally (unit weight)
+
+function used for fitting: g(x)
+fitted parameters initialized with current variable values
+
+
+
+ Iteration 0
+ WSSR        : 130928            delta(WSSR)/WSSR   : 0
+ delta(WSSR) : 0                 limit for stopping : 1e-005
+ lambda	  : 12.9258
+
+initial set of free parameter values
+
+c               = 1
+
+After 4 iterations the fit converged.
+final sum of squares of residuals : 0.497777
+rel. change during last iteration : -4.0916e-013
+
+degrees of freedom    (FIT_NDF)                        : 8
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.249444
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.0622221
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+
+c               = 10.3312          +/- 0.006433     (0.06227%)
+
+
+correlation matrix of the fit parameters:
+
+               c      
+c               1.000 
