@@ -126,6 +126,8 @@
 \usepackage{babelbib}
 \selectbiblanguage{ngerman}
 
+\usepackage{eurosym}
+
 \begin{document}
 
 \begin{titlepage}
@@ -191,7 +193,7 @@ Analog dazu ist auf der Ausgangsseite die \textit{Sekundärspule}.
 
 \begin{figure}[!htb]
 	\centering
-	\includegraphics[scale=1.0]{TrafoSchema.png}
+	\includegraphics[scale=0.75]{TrafoSchema.png}
 	\caption{Schema eines Transformators \protect\footnotemark}
 	\label{fig:TrafoSchema}
 \end{figure}
@@ -204,6 +206,35 @@ Bei einem \textit{idealen}, unbelasteten Transformator mit dem Übersetzungsverh
 \end{align}
 Aufgrund der Lenzschen Regel sind die Spannungen bzw. Ströme um $180^\circ$ phasenverschoben.
 %Herleitungen!!!!!!!!!!!!!!!!!!!!!!!!!
+
+\subsection{Belasteter Transformator}
+Wirkleistung
+\begin{align}
+	P_\text{wirk}=UI\cdot\cos\phi
+\end{align}
+
+Verlustleistung
+\begin{align}
+	P_\text{verlust}=UI\cdot\sin\phi
+\end{align}
+
+Phasenverschiebung
+\begin{align}
+	\tan\phi=\frac{I_0 \sin\phi_0}{I_1+I_0\cos\phi_0}
+\end{align}
+mit $I_2=u\cdot I_1$
+
+\subsection{Methoden, um die Phasenverschiebung zu berechnen}
+\subsubsection{Lissajous-Figuren}
+
+\subsubsection{Zeigerdiagramm}
+\begin{figure}[!htb]
+	\centering
+	\includegraphics[scale=1.0]{Zeigerdiagramm.png}
+\end{figure}
+\begin{align}
+	\cos(\phi/2)=\frac{I_\text{ges}}{2I_1}
+\end{align}
 
 \section{Durchführung}
 \label{sec:durchfuehrung}
@@ -278,12 +309,17 @@ Der gewichtete Mittelwert beträgt:
 \end{figure}
 
 \subsection{Leistung}
-Bei einer Spannung $U=200\,$V und einem Strom $I_2=5\,$A, also $I_1=0.48\,$A ergibt sich mit der oben berechneten Phasenverschiebung $\delta=(0.5031 \pm 0.016) \,$rad (gewichteter Mittelwert aus Oszi- und Lissajous-Messung) ergeben sich folgende Wirk- und Verlustleistungen:
+Bei einer Spannung $U=200\,$V und einem Strom $I_2=5\,$A, also $I_1=0.48\,$A ergibt sich mit der oben berechneten Phasenverschiebung $\delta=(0.498 \pm 0.020) \,$rad (gewichteter Mittelwert aus Oszi- und Lissajous-Messung) ergeben sich folgende Wirk- und Verlustleistungen:
 \begin{empheq}[box=\shadowbox*]{align*}
-	P_\text{wirk}=(84.1 \pm 0.7)\,\si{\watt} \qquad
-	P_\text{verlust}=(46.3 \pm 1.3)\,\si{\watt}
+	P_\text{wirk}=(84.4 \pm 0.9)\,\si{\watt} \qquad
+	P_\text{verlust}=(45.8 \pm 1.7)\,\si{\watt}
 \end{empheq}
-Für ein Handyladegerät würde sich aus unseren Transformator-Werten $U=200\,$V und $I_1(I_2=0\,\si{\ampere})=0.11\,$A sowie der Phasenverschiebung $\delta=(0.998 \pm 0.03)\,$
+Aus unseren Transformator-Werten $U=200\,$V und $I_1(I_2=0\,\si{\ampere})=0.11\,$A sowie der Phasenverschiebung $\delta=(1.51 \pm 0.04)\,$rad  ergibt sich eine Leerlauf-Leistung von $(6.1 \pm 3.3)\,$W.
+Setzt man für ein Handyladegerät die gleichen Werte an und bezahlt einen Strompreis von $0.25\,$\euro/kWh, bezahlt man folgendes pro Jahr, wenn das  Ladegerät in der Steckdose verbleibt:
+\begin{empheq}[box=\shadowbox*]{align*}
+	365.2425 \,\frac{\text{d}}{\text{a}}\cdot 24 \,\frac{\text{h}}{\text{d}}\cdot 0.25\,\frac{\text{\euro}}{\text{kWh}}\cdot (6.1 \pm 3.3)\,\si{\watt}=(13.37 \pm 7.24)\,\frac{\text{\euro}}{\text{a}}
+\end{empheq}
+Von diesem Geld könnte man sich stattdessen ein bis zwei Pizzen bestellen. 
 
 \section{Diskussion}
 \label{sec:diskussion}
