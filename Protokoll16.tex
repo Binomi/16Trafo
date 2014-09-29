@@ -193,16 +193,15 @@ Analog dazu ist auf der Ausgangsseite die \textit{Sekundärspule}.
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.75]{TrafoSchema.png}
-	\caption{Schema eines Transformators \protect\footnotemark}
+	\caption{Schema eines Transformators \cite[Datum: 01.09.2014]{LP16}}
 	\label{fig:TrafoSchema}
 \end{figure}
-\footnotetext{https://lp.uni-goettingen.de/get/text/4245, 01.09.2014}
 
 \subsection{Unbelasteter Transformator}
 Ist der Sekundärkreis nicht geschlossen, spricht man von einem unbelasteten Transformator.
 Außerdem liege an der Primärspule eine Wechselspannung $U_1$ an.
 Durch den Eisenkern ist der von der Primärspule erzeugte magnetische Fluss durch diese genauso groß wie durch die Sekundärspule.
-Mit dem Induktionsgesetz folgt:
+Mit dem Induktionsgesetz folgt (vgl. \cite[S.432]{gerthsen})
 \begin{align*}
 	U_1&=N_1 \dot{\Phi} \\
 	U_2&=-N_2\dot{\Phi}=-\frac{N_2}{N_1}U_1
@@ -254,6 +253,7 @@ Also kann so $\varphi$ berechnet werden:
 \begin{figure}[!htb]
 	\centering
 	\includegraphics[scale=0.8]{Zeigerdiagramm.png}
+	\caption{zugehöriges Zeigerdiagramm \cite[Datum: 01.09.2014]{LP16}}
 \end{figure}
 \begin{align}
 	\cos(\phi/2)=\frac{I_\text{ges}}{2I_1}
@@ -265,7 +265,7 @@ Also kann so $\varphi$ berechnet werden:
 \begin{figure}[!htb]
 	\centering	
 	\includegraphics[scale=1.0]{TrafoSchaltung.png}
-	\caption{Schaltplan des Versuchaufbaus}
+	\caption{Schaltplan des Versuchaufbaus \cite[Datum: 01.09.2014]{LP16}}
 	\label{fig:Schaltung}
 \end{figure}
 Zuerst wird im \textbf{unbelasteten Fall} (Sekundärkreis nicht geschlossen) $U_1$ in Abhängigkeit von $I_1$.
@@ -368,5 +368,8 @@ Falls unser Aufbau fehlerhaft war, muss darauf in Zukunft in der Praktikumsanlei
 Da das \textbf{Übersetzungsverhältnis} meist ganzzahlig ist, gehen wir bei unserem Ergebnis \eqref{res:u} davon aus, dass das tatsächliche Verhältnis $u=10$ ist.
 Somit haben wir eine Abweichung von etwa $3.5\%$.
 
+
+\bibliography{literatur}
+\bibliographystyle{babalpha}
 
 \end{document}

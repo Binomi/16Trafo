@@ -8,4 +8,8 @@
 
 *.tex.bak
 
+*.bbl
+
+*.blg
+
 Protokoll16.log
