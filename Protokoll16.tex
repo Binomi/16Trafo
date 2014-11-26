@@ -210,8 +210,21 @@ Mit dem Induktionsgesetz folgt (vgl. \cite[S.432]{gerthsen})
 Man erkennt, dass aufgrund der Lenzschen Regel die Spannungen um $180^\circ$ phasenverschoben sind.
 Da Primärstrom und -spannung $90^\circ$ phasenverschoben sind, wird in diesem Fall auch keine Energie umgesetzt.
 
+Bei einem \textit{idealen} Transformator mit dem Übersetzungsverhältnis $u$ gilt also:
+\begin{align}
+	u=\frac{N_1}{N_2}=\frac{U_1}{U_2}=\frac{I_2}{I_1}\,.
+	\label{eq:u}  
+\end{align}
+
 \subsection{Belasteter Transformator}
-Schließt man den Sekundärkreis mit einer Impedanz $Z$, spricht man von einem belasteten Transformator.
+Schließt man den Sekundärkreis mit einer Impedanz $Z$, spricht man von einem belasteten Transformator. Nun fließt im Sekundärkreis der Strom $I_2=\frac{U_2}{Z}$.
+
+Phasenverschiebung
+\begin{align}
+	\tan\phi=\frac{I_0 \sin\phi_0}{I_1+I_0\cos\phi_0}
+	\label{eq:phase_theo}
+\end{align}
+mit $I_2=u\cdot I_1$
 
 Wirkleistung
 \begin{align}
@@ -221,19 +234,6 @@ Wirkleistung
 Verlustleistung
 \begin{align}
 	P_\text{verlust}=UI\cdot\sin\phi
-\end{align}
-
-Phasenverschiebung
-\begin{align}
-	\tan\phi=\frac{I_0 \sin\phi_0}{I_1+I_0\cos\phi_0}
-	\label{eq:phase_theo}
-\end{align}
-mit $I_2=u\cdot I_1$
-
-Bei einem \textit{idealen} Transformator mit dem Übersetzungsverhältnis $u$ gilt also:
-\begin{align}
-	u=\frac{N_1}{N_2}=\frac{U_1}{U_2}=\frac{I_2}{I_1}\,.
-	\label{eq:u}  
 \end{align}
 
 \subsection{Methoden, um die Phasenverschiebung zu berechnen}
