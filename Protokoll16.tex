@@ -212,28 +212,38 @@ Da Primärstrom und -spannung $90^\circ$ phasenverschoben sind, wird in diesem F
 
 Bei einem \textit{idealen} Transformator mit dem Übersetzungsverhältnis $u$ gilt also:
 \begin{align}
-	u=\frac{N_1}{N_2}=\frac{U_1}{U_2}=\frac{I_2}{I_1}\,.
+	u=\frac{N_1}{N_2}=-\frac{U_1}{U_2}\,.
 	\label{eq:u}  
 \end{align}
 
 \subsection{Belasteter Transformator}
-Schließt man den Sekundärkreis mit einer Impedanz $Z$, spricht man von einem belasteten Transformator. Nun fließt im Sekundärkreis der Strom $I_2=\frac{U_2}{Z}$.
+Schließt man den Sekundärkreis mit einem Widerstand $R$, spricht man von einem belasteten Transformator.
+Nun fließt im Sekundärkreis der Strom $I_2=\frac{U_2}{R}$, welcher ein zusätzlichen magnetischen Fluss im Eisenkern und somit einen Strom $I_1'$ im Primärkreis induziert: $U_1I_1'=U_2I_2\,$.
+Also ist $I_1'=\frac{U_2}{U_1}I_2=-\frac{I_2}{u}\,.$\\
+Für den Gesamtstrom im Primärkreis folgt nun
+\begin{align}
+	I_1=I_0+I_1'=I_0-\frac{I_2}{u}\,,
+	\label{eq:I_belastet}
+\end{align}
+wobei $I_0$ der Primärstrom im unbelasteten Fall ist (vgl. \cite[S.433]{gerthsen}).
 
-Phasenverschiebung
+Da $I_0$ um $\phi_0$ zur Primärspannung verschoben ist und $I_1'$ in Phase zu dieser Spannung ist, kann man die Phasenverschiebung $\phi$ im belasteten Fall aus \eqref{eq:I_belastet} mit 
 \begin{align}
 	\tan\phi=\frac{I_0 \sin\phi_0}{I_1+I_0\cos\phi_0}
 	\label{eq:phase_theo}
 \end{align}
-mit $I_2=u\cdot I_1$
+bestimmen.\\
 
-Wirkleistung
+
+Für eine Phasenverschiebung $\phi$, den Primärstrom $I$ und die Primärspannung $U$ definiert man die im Sekundärkreis umgesetzte Leistung als \textit{Wirkleistung}
 \begin{align}
-	P_\text{wirk}=UI\cdot\cos\phi
+	P_\text{wirk}=UI\cdot\cos\phi\,,
+	\label{eq:wirk}
 \end{align}
-
-Verlustleistung
+sowie \textit{Verlustleistung}
 \begin{align}
-	P_\text{verlust}=UI\cdot\sin\phi
+	P_\text{verlust}=UI\cdot\sin\phi\,.
+	\label{eq:verlust}
 \end{align}
 
 \subsection{Methoden, um die Phasenverschiebung zu berechnen}
@@ -257,11 +267,14 @@ berechnet werden.
 	\centering
 	\includegraphics[scale=0.8]{Zeigerdiagramm.png}
 	\caption{zugehöriges Zeigerdiagramm \cite[Datum: 01.09.2014]{LP16}.}
+	\label{fig:zeigerdiagramm}
 \end{figure}
+Aus Abb.\ref{fig:zeigerdiagramm} geht hervor, dass die Phasenverschiebung $\phi$ bei $|I_{1,T}|=|I_{1,R}|$ mit
 \begin{align}
 	\cos(\phi/2)=\frac{I_\text{ges}}{2I_1}
 	\label{eq:zeigerdiagramm}
 \end{align}
+berechnet werden kann.
 
 \section{Durchführung}
 \label{sec:durchfuehrung}
@@ -343,7 +356,7 @@ Hierbei verwenden wir $I_0=0.15\,$A und $\varphi_0=\pi/2$ sowie die zuvor berech
 \end{figure}
 
 \subsection{Leistung}
-Bei einer Spannung $U=200\,$V und einem Strom $I_2=5\,$A, also $I_1=0.48\,$A ergibt sich mit der oben berechneten Phasenverschiebung $\delta=(0.498 \pm 0.020) \,$rad (gewichteter Mittelwert aus Oszi- und Lissajous-Messung) ergeben sich folgende Wirk- und Verlustleistungen:
+Bei einer Spannung $U=200\,$V und einem Strom $I_2=5\,$A, also $I_1=0.48\,$A ergibt sich mit der oben berechneten Phasenverschiebung $\delta=(0.498 \pm 0.020) \,$rad (gewichteter Mittelwert aus Oszi- und Lissajous-Messung) ergeben sich nach \eqref{eq:wirk} und \eqref{eq:verlust} folgende Wirk- und Verlustleistungen:
 \begin{empheq}[box=\shadowbox*]{align*}
 	P_\text{wirk}=(84.4 \pm 0.9)\,\si{\watt} \qquad
 	P_\text{verlust}=(45.8 \pm 1.7)\,\si{\watt}
@@ -351,9 +364,9 @@ Bei einer Spannung $U=200\,$V und einem Strom $I_2=5\,$A, also $I_1=0.48\,$A erg
 Aus unseren Transformator-Werten $U=200\,$V und $I_1(I_2=0\,\si{\ampere})=0.11\,$A sowie der Phasenverschiebung $\delta=(1.51 \pm 0.04)\,$rad  ergibt sich eine Leerlauf-Leistung von $(6.1 \pm 3.3)\,$W.
 Setzt man für ein Handyladegerät die gleichen Werte an und bezahlt einen Strompreis von $0.25\,$\euro/kWh, bezahlt man folgendes pro Jahr, wenn das  Ladegerät in der Steckdose verbleibt:
 \begin{empheq}[box=\shadowbox*]{align*}
-	365.2425 \,\frac{\text{d}}{\text{a}}\cdot 24 \,\frac{\text{h}}{\text{d}}\cdot 0.25\,\frac{\text{\euro}}{\text{kWh}}\cdot (6.1 \pm 3.3)\,\si{\watt}=(13.37 \pm 7.24)\,\frac{\text{\euro}}{\text{a}}
+	365.2425 \,\frac{\text{d}}{\text{a}}\cdot 24 \,\frac{\text{h}}{\text{d}}\cdot 0.25\,\frac{\text{\euro}}{\text{kWh}}\cdot (6.1 \pm 3.3)\,\si{\watt}=(13.37 \pm 7.24)\,\frac{\text{\euro}}{\text{a}}\,.
 \end{empheq}
-Von diesem Geld könnte man sich stattdessen ein bis zwei Pizzen bestellen. 
+Von diesem Geld könnte man sich stattdessen mindestens ein bis zwei Pizzen bestellen. 
 
 \section{Diskussion}
 \label{sec:diskussion}
